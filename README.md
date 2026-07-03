@@ -8,7 +8,25 @@
 
 > 说明：本项目定位为心理健康辅助工具，不替代专业医疗诊断、治疗或危机干预。如用户出现严重心理危机，应及时联系专业人士或当地紧急救助渠道。
 
-## 二、核心功能
+## 二、界面预览
+
+### AI 心理咨询
+
+![AI 心理咨询界面](docs/images/consultation.png)
+
+### 情绪日记
+
+![情绪日记界面](docs/images/emotion-diary.png)
+
+### 后台数据分析
+
+![后台数据分析界面](docs/images/dashboard.png)
+
+### 后台咨询记录
+
+![后台咨询记录界面](docs/images/consultation-records.png)
+
+## 三、核心功能
 
 1. AI 心理咨询
 
@@ -34,7 +52,7 @@
 
 基于 Axios 封装 API 请求、token 注入、登录过期处理和错误提示；开发环境通过 Vite proxy 转发后端接口。
 
-## 三、功能流程
+## 四、功能流程
 
 ```mermaid
 flowchart LR
@@ -49,7 +67,7 @@ flowchart LR
   Admin --> Record[咨询与情绪记录管理]
 ```
 
-## 四、技术栈
+## 五、技术栈
 
 - 前端框架：Vue 3、Vite
 - UI 组件：Element Plus、Element Plus Icons
@@ -60,7 +78,7 @@ flowchart LR
 - 数据可视化：ECharts
 - 样式方案：SCSS
 
-## 五、架构设计
+## 六、架构设计
 
 ```mermaid
 flowchart TB
@@ -81,7 +99,7 @@ flowchart TB
   Store --> API
 ```
 
-## 六、项目结构
+## 七、项目结构
 
 ```text
 .
@@ -100,7 +118,7 @@ flowchart TB
 └─ package.json
 ```
 
-## 七、快速运行
+## 八、快速运行
 
 ### 1. 前置条件
 
@@ -145,7 +163,7 @@ http://localhost:5173
 npm run build
 ```
 
-## 八、主要页面
+## 九、主要页面
 
 - `/`：项目首页
 - `/consultation`：AI 心理咨询
@@ -159,7 +177,7 @@ npm run build
 - `/back/consulation`：后台咨询记录
 - `/back/emotional`：后台情绪日志
 
-## 九、接口说明
+## 十、接口说明
 
 前端默认通过 `/api` 访问后端。开发环境中，Vite 会把 `/api` 转发到 `VITE_API_PROXY_TARGET`。
 
@@ -172,7 +190,7 @@ npm run build
 - `src/api/emotion.js`：情绪日志管理
 - `src/api/dashboard.js`：后台数据看板
 
-## 十、测试与校验
+## 十一、测试与校验
 
 当前项目主要使用构建校验：
 
@@ -186,13 +204,13 @@ npm run build
 - 关键组件单元测试
 - 登录、咨询、情绪日记等核心流程的端到端测试
 
-## 十一、项目亮点
+## 十二、项目亮点
 
 - 不是单页 Demo，而是包含用户端和管理端的完整业务前端。
 - AI 咨询使用 SSE 流式输出，包含中断、重连、错误提示等真实交互细节。
 - 路由守卫区分管理员和普通用户，具备基础权限模型。
 - 情绪分析、知识文章和后台管理形成闭环，适合作为简历项目展示。
 
-## 十二、开源协议
+## 十三、开源协议
 
 本项目基于 MIT License 开源。
