@@ -22,9 +22,13 @@
 
 ![后台数据分析界面](docs/images/dashboard.png)
 
-### 后台咨询记录
+### 后台知识文章
 
-![后台咨询记录界面](docs/images/consultation-records.png)
+![后台知识文章界面](docs/images/knowledge-management.png)
+
+### 后台情绪日志
+
+![后台情绪日志界面](docs/images/emotion-logs.png)
 
 ## 三、核心功能
 
