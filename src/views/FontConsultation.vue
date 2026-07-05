@@ -5,7 +5,7 @@
                 <div class="breathing-circle">
                     <el-image :src="imageUrl" style="width: 25px; height: 25px;" alt="AI助手" />
                 </div>
-                <div class="assistant-name">宁渡AI助手</div>
+                <div class="assistant-name">宁静AI心理健康助手</div>
                 <div class="online-status">
                     <div class="status-dot"></div>
                     在线服务中
@@ -102,7 +102,7 @@
                         <el-image :src="imageUrl1" style="width: 30px; height: 30px;" />
                     </div>
                     <div class="chat-info">
-                        <h2>宁渡AI助手</h2>
+                        <h2>宁静AI心理健康助手</h2>
                         <p>您的贴心助手，随时为您服务</p>
                     </div>
                 </div>
@@ -303,7 +303,7 @@ const startSession = async (message) => {
         initialMessage: message
     }
     if (currentChat.value.sessionTitle === '新对话') {
-        SessionParams.sessionTitle = `宁渡AI助手-${new Date().toLocaleString()}`
+        SessionParams.sessionTitle = `宁静AI心理健康助手-${new Date().toLocaleString()}`
     }
     else {
         SessionParams.sessionTitle = currentChat.value.sessionTitle
