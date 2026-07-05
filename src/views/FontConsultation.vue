@@ -210,6 +210,9 @@ const createNewChat = () => {
     }
     currentChat.value = newChat
 }
+const normalizeAssistantTitle = (title = '') => {
+    return String(title).replace(/^宁渡AI助手/, '宁静AI心理健康助手')
+}
 const formatMarkdowm = (content) => {
     return content.replace(/\n/g, '<br>')
 }
@@ -259,7 +262,7 @@ const handleClick = async (item) => {
     const SessionData = {
         sessionId: 'session_' + item.id,
         status: 'ACTIVE',
-        sessionTitle: item.sessionTitle,
+        sessionTitle: normalizeAssistantTitle(item.sessionTitle),
     }
     currentChat.value = SessionData
 }
@@ -273,7 +276,10 @@ const getSessionList = async () => {
         pageSize: '10'
     }
     const res = await getSessionDetailApi(params)
-    sessionList.value = res.data.records
+    sessionList.value = res.data.records.map(item => ({
+        ...item,
+        sessionTitle: normalizeAssistantTitle(item.sessionTitle)
+    }))
     console.log(sessionList.value)
 }
 const sendMessage = () => {
