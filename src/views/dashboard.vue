@@ -464,10 +464,19 @@ const imageUrl2=new URL('@/assets/images/like.png',import.meta.url).href
 const imageUrl3=new URL('@/assets/images/comments.png',import.meta.url).href
 const imageUrl4=new URL('@/assets/images/smile.png',import.meta.url).href
 
+let resizeFrame = null
+
 const handleResize = () => {
-  chart?.resize()
-  consultationChart?.resize()
-  activityChart?.resize()
+  if (resizeFrame) {
+    cancelAnimationFrame(resizeFrame)
+  }
+
+  resizeFrame = requestAnimationFrame(() => {
+    chart?.resize()
+    consultationChart?.resize()
+    activityChart?.resize()
+    resizeFrame = null
+  })
 }
 
 onMounted(()=>{
@@ -482,6 +491,10 @@ onMounted(()=>{
 
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
+  if (resizeFrame) {
+    cancelAnimationFrame(resizeFrame)
+    resizeFrame = null
+  }
   if (chart) {
     chart.dispose()
     chart = null
